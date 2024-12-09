@@ -34,6 +34,19 @@ export default class Tree {
       parent.right = temp;
     }
   };
+  find = (value) => {
+    let curr = this.root;
+    while (curr !== null) {
+      if (curr.data === value) {
+        return curr;
+      } else if (curr.data > value) {
+        curr = curr.left;
+      } else {
+        curr = curr.right;
+      }
+    }
+    return null;
+  };
   delete = (value) => {
     this.root = deleteNode(this.root, value);
   };
