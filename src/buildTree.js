@@ -1,6 +1,6 @@
 import Node from "./Node";
 
-export default buildTree = (array, start, end) => {
+export const buildTree = (array, start, end) => {
   if (start > end) {
     return null;
   }
@@ -9,8 +9,8 @@ export default buildTree = (array, start, end) => {
 
   let root = new Node(array[mid]);
 
-  root.left = buildTree(arr, start, mid - 1);
-  root.right = buildTree(arr, mid + 1, end);
+  root.left = buildTree(array, start, mid - 1);
+  root.right = buildTree(array, mid + 1, end);
 
   return root;
 };

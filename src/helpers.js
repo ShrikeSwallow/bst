@@ -10,3 +10,9 @@ export const prettyPrint = (node, prefix = "", isLeft = true) => {
     prettyPrint(node.left, `${prefix}${isLeft ? "    " : "│   "}`, true);
   }
 };
+
+export const curateArray = (array) => {
+  const setTemp = new Set(array);
+  const sortedArray = [...setTemp];
+  return sortedArray.toSorted((a, b) => a - b);
+};

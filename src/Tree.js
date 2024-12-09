@@ -1,4 +1,4 @@
-import buildTree from "./buildTree";
+import { buildTree } from "./buildTree";
 
 export default class Tree {
   constructor(array) {
