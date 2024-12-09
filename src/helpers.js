@@ -16,3 +16,11 @@ export const curateArray = (array) => {
   const sortedArray = [...setTemp];
   return sortedArray.toSorted((a, b) => a - b);
 };
+
+export const getSuccessor = (curr) => {
+  curr = curr.right;
+  while (curr !== null && curr.left !== null) {
+    curr = curr.left;
+  }
+  return curr;
+};

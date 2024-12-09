@@ -1,5 +1,6 @@
 import Node from "./Node";
 import { buildTree } from "./buildTree";
+import { deleteNode } from "./deleteNode";
 
 export default class Tree {
   constructor(array) {
@@ -32,5 +33,8 @@ export default class Tree {
     } else {
       parent.right = temp;
     }
+  };
+  delete = (value) => {
+    this.root = deleteNode(this.root, value);
   };
 }
