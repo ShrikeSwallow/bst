@@ -4,6 +4,7 @@ import { prettyPrint, curateArray } from "./helpers";
 
 const array = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324];
 const sortedArray = curateArray(array);
-console.log(sortedArray);
-//const tree = new Tree(array);
-//prettyPrint(tree.root);
+const tree = new Tree(array);
+prettyPrint(tree.root);
+tree.insert(69);
+prettyPrint(tree.root);
