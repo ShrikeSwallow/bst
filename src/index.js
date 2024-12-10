@@ -8,3 +8,4 @@ const tree = new Tree(sortedArray);
 prettyPrint(tree.root);
 console.log(tree.find(1));
 console.log(tree.find(8));
+tree.levelOrder();

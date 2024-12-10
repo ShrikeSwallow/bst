@@ -50,4 +50,26 @@ export default class Tree {
   delete = (value) => {
     this.root = deleteNode(this.root, value);
   };
+  levelOrder = (callback) => {
+    if (this.root === null) {
+      return;
+    }
+    const queueArr = [];
+    queueArr.push(this.root);
+    let curr;
+    while (queueArr.length > 0) {
+      curr = queueArr[0];
+
+      // callback should go here
+      // callback();
+      console.log(curr.data);
+      if (curr.left !== null) {
+        queueArr.push(curr.left);
+      }
+      if (curr.right !== null) {
+        queueArr.push(curr.right);
+      }
+      queueArr.splice(0, 1);
+    }
+  };
 }
