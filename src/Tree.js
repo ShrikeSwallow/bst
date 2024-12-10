@@ -139,4 +139,12 @@ export default class Tree {
   postOrder = (callback) => {
     this.#postOrderRec(this.root, callback);
   };
+  height = (node) => {
+    // look for searched node's value, if none, return null; if found,
+    // call levelOrderRec(node), table length is the height, return it
+  };
+  depth = (node) => {
+    // create a counter variable, traverse tree searching for node value,
+    // after every check increase counter, return it
+  };
 }
