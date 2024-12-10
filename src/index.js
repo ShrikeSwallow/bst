@@ -19,3 +19,5 @@ tree.insert(696969);
 tree.insert(69696969);
 prettyPrint(tree.root);
 console.log(tree.isBalanced());
+tree.rebalance();
+prettyPrint(tree.root);

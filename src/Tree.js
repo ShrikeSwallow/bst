@@ -158,4 +158,12 @@ export default class Tree {
       return true;
     } else return false;
   };
+  rebalance = () => {
+    const newArray = [];
+    this.inOrder((root) => {
+      newArray.push(root.data);
+    });
+
+    this.root = new Tree(newArray).root;
+  };
 }
