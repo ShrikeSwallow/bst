@@ -104,8 +104,39 @@ export default class Tree {
     return result;
   };
 
-  #preOrderRec = (root, callback) => {};
+  #preOrderRec = (root, callback) => {
+    if (root === null) {
+      return;
+    }
+    callback(root);
+    this.#preOrderRec(root.left, callback);
+    this.#preOrderRec(root.right, callback);
+  };
   preOrder = (callback) => {
     this.#preOrderRec(this.root, callback);
+  };
+
+  #inOrderRec = (root, callback) => {
+    if (root === null) {
+      return;
+    }
+    this.#inOrderRec(root.left, callback);
+    callback(root);
+    this.#inOrderRec(root.right, callback);
+  };
+  inOrder = (callback) => {
+    this.#inOrderRec(this.root, callback);
+  };
+
+  #postOrderRec = (root, callback) => {
+    if (root === null) {
+      return;
+    }
+    this.#postOrderRec(root.left, callback);
+    this.#postOrderRec(root.right, callback);
+    callback(root);
+  };
+  postOrder = (callback) => {
+    this.#postOrderRec(this.root, callback);
   };
 }
