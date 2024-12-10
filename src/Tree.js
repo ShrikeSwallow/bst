@@ -50,7 +50,16 @@ export default class Tree {
   delete = (value) => {
     this.root = deleteNode(this.root, value);
   };
+  print = (node) => {
+    console.log(node.data);
+  };
+  errorThrower = () => {
+    throw new Error("Callback is required!");
+  };
   levelOrder = (callback) => {
+    if (!callback) {
+      this.errorThrower();
+    }
     if (this.root === null) {
       return;
     }
@@ -61,8 +70,8 @@ export default class Tree {
       curr = queueArr[0];
 
       // callback should go here
-      // callback();
-      console.log(curr.data);
+      callback(curr);
+      //console.log(curr.data);
       if (curr.left !== null) {
         queueArr.push(curr.left);
       }
@@ -94,10 +103,9 @@ export default class Tree {
     this.#levelRec(this.root, 0, result, callback);
     return result;
   };
+
+  #preOrderRec = (root, callback) => {};
   preOrder = (callback) => {
-    if (this.root === null) {
-      return;
-    }
-    let curr = root;
+    this.#preOrderRec(this.root, callback);
   };
 }
