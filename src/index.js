@@ -21,3 +21,8 @@ prettyPrint(tree.root);
 console.log(tree.isBalanced());
 tree.rebalance();
 prettyPrint(tree.root);
+console.log(tree.isBalanced());
+
+tree.preOrder(tree.print);
+tree.postOrder(tree.print);
+tree.inOrder(tree.print);
