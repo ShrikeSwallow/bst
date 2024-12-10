@@ -10,5 +10,6 @@ prettyPrint(tree.root);
 //console.log(tree.find(8));
 //tree.levelOrder(tree.print);
 
-//console.log(tree.levelOrderRec());
-tree.postOrder(tree.print);
+console.log(tree.levelOrderRec());
+//tree.postOrder(tree.print);
+console.log(tree.height(tree.root.left));

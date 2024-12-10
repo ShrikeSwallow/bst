@@ -142,6 +142,9 @@ export default class Tree {
   height = (node) => {
     // look for searched node's value, if none, return null; if found,
     // call levelOrderRec(node), table length is the height, return it
+    let subArr = [];
+    this.#levelRec(node, 0, subArr);
+    return subArr.length - 1;
   };
   depth = (node) => {
     // create a counter variable, traverse tree searching for node value,
