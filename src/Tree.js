@@ -151,4 +151,11 @@ export default class Tree {
     // after every check increase counter, return it
     return this.height(this.root) - this.height(node);
   };
+  isBalanced = () => {
+    if (
+      Math.abs(this.height(this.root.left) - this.height(this.root.right)) <= 1
+    ) {
+      return true;
+    } else return false;
+  };
 }

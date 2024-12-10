@@ -10,6 +10,12 @@ prettyPrint(tree.root);
 //console.log(tree.find(8));
 //tree.levelOrder(tree.print);
 
-console.log(tree.levelOrderRec());
+//console.log(tree.levelOrderRec());
 //tree.postOrder(tree.print);
-console.log(tree.depth(tree.root.left.left));
+//console.log(tree.depth(tree.root.left.left));
+console.log(tree.isBalanced());
+tree.insert(6969);
+tree.insert(696969);
+tree.insert(69696969);
+prettyPrint(tree.root);
+console.log(tree.isBalanced());
