@@ -72,25 +72,32 @@ export default class Tree {
       queueArr.splice(0, 1);
     }
   };
+
+  #levelRec = (node, level, arr, callback) => {
+    if (!node) {
+      return;
+    }
+
+    if (arr[level]) {
+      arr[level].push(node.data);
+    } else {
+      arr[level] = [node.data];
+    }
+    // callback goes here
+    // callback(node);
+    this.#levelRec(node.left, level + 1, arr, callback);
+    this.#levelRec(node.right, level + 1, arr, callback);
+  };
+
   levelOrderRec = (callback) => {
-    let result = [];
-
-    const lot = (node, level) => {
-      if (!node) return;
-
-      if (result[level]) {
-        result[level].push(node.data);
-      } else {
-        result[level] = [node.data];
-      }
-      // callback goes here
-      // callback(node);
-      lot(node.left, level + 1);
-      lot(node.right, level + 1);
-    };
-
-    lot(this.root, 0);
-
+    const result = [];
+    this.#levelRec(this.root, 0, result, callback);
     return result;
+  };
+  preOrder = (callback) => {
+    if (this.root === null) {
+      return;
+    }
+    let curr = root;
   };
 }
