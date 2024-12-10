@@ -72,4 +72,25 @@ export default class Tree {
       queueArr.splice(0, 1);
     }
   };
+  levelOrderRec = (callback) => {
+    let result = [];
+
+    const lot = (node, level) => {
+      if (!node) return;
+
+      if (result[level]) {
+        result[level].push(node.data);
+      } else {
+        result[level] = [node.data];
+      }
+      // callback goes here
+      // callback(node);
+      lot(node.left, level + 1);
+      lot(node.right, level + 1);
+    };
+
+    lot(this.root, 0);
+
+    return result;
+  };
 }
