@@ -12,4 +12,4 @@ prettyPrint(tree.root);
 
 console.log(tree.levelOrderRec());
 //tree.postOrder(tree.print);
-console.log(tree.height(tree.root.left));
+console.log(tree.depth(tree.root.left.left));

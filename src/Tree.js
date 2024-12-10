@@ -149,5 +149,6 @@ export default class Tree {
   depth = (node) => {
     // create a counter variable, traverse tree searching for node value,
     // after every check increase counter, return it
+    return this.height(this.root) - this.height(node);
   };
 }
